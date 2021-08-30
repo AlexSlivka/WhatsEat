@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WhatsEat</string>
+    <string name="main_title">Пободрать блюдо на ужин</string>
+    <string name="secondary_title">Книга рецептов</string>
+    <string name="search_text">Введите названия продуктов, которые имеются у вас:</string>
+    <string name="search_hint_text">Продукты</string>
+    <string name="search_button">Подобрать рецепт</string>
 </resources>

@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main_background">#2c2c2c</color>
+    <color name="left_background">#fff</color>
+    <color name="search_panel_background">#383838</color>
+    <color name="search_button_background">#e7b400</color>
+    <color name="recipe_background">#383838</color>
+    <color name="line">#00ff00</color>
+    <color name="main_text">#fff</color>
 </resources>
