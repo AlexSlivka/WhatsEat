@@ -50,7 +50,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:background="@color/search_panel_background">
+        android:background="@drawable/shape_search_background">
 
         <TextView
             android:id="@+id/tv_search_text"
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_margin="@dimen/search_margin"
-            android:background="@color/main_text"
+           android:background="@drawable/shape_search_edit_text_background"
             android:hint="@string/search_hint_text"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="@id/cl_search"
@@ -83,9 +83,10 @@
             android:layout_marginTop="@dimen/search_margin"
             android:layout_marginEnd="@dimen/search_margin"
             android:layout_marginBottom="@dimen/search_margin"
-            android:background="@color/line"
+            android:backgroundTint="@color/search_button_background"
             android:text="@string/search_button"
             android:textSize="12sp"
+            android:textColor="@color/main_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editText_search"
