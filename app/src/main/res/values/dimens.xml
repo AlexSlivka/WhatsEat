@@ -3,4 +3,5 @@
     <dimen name="search_margin">8dp</dimen>
     <dimen name="start_margin">16dp</dimen>
     <dimen name="end_margin">16dp</dimen>
+    <dimen name="width_holder_movie">160dp</dimen>
 </resources>
