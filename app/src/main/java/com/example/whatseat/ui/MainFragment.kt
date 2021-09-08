@@ -11,7 +11,7 @@ import com.example.whatseat.R
 import com.example.whatseat.Recipe
 import com.example.whatseat.RecipeDataSource
 
-class MainFragment: Fragment()  {
+class MainFragment : Fragment() {
     private var recyclerRecipesList: RecyclerView? = null
     private var adapterRecipesList: RecipesListAdapter? = null
 
@@ -30,7 +30,8 @@ class MainFragment: Fragment()  {
         recyclerRecipesList?.adapter = adapterRecipesList
         val displayMetrics = context?.resources?.displayMetrics
         val screenWidthDp = displayMetrics!!.widthPixels / displayMetrics.density
-        val columnWidthDp = resources.getDimensionPixelSize(R.dimen.width_holder_movie) / displayMetrics.density
+        val columnWidthDp =
+            resources.getDimensionPixelSize(R.dimen.width_holder_movie) / displayMetrics.density
         val noOfColumns = (screenWidthDp / columnWidthDp).toInt()
         recyclerRecipesList?.layoutManager = GridLayoutManager(context, noOfColumns)
     }
@@ -50,11 +51,11 @@ class MainFragment: Fragment()  {
     }
 
     private fun doOnClick(recipe: Recipe) {
-      /*  fragmentManager?.beginTransaction()
+        fragmentManager?.beginTransaction()
             ?.addToBackStack(null)
-            ?.replace(R.id.main_container, FragmentMoviesDetails())
+            ?.replace(R.id.main_container, RecipeCardFragment.newInstance(recipe))
             ?.commit()
-            */
+
     }
 
     private val clickListener = object : OnRecyclerItemClicked {
