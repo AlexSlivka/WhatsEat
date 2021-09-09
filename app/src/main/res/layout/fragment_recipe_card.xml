@@ -13,6 +13,8 @@
         android:textColor="@color/main_text"
         android:textSize="24sp"
         android:layout_marginTop="@dimen/start_margin"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginEnd="@dimen/end_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -39,8 +41,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_poster_of_recipe_card"
         android:layout_marginTop="@dimen/start_margin"
-        android:layout_marginStart="@dimen/start_margin"
-        android:layout_marginEnd="@dimen/end_margin"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

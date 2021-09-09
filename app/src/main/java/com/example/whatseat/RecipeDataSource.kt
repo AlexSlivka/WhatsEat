@@ -25,7 +25,7 @@ class RecipeDataSource {
 
             ),
             Recipe(
-                "Лазанья классическая с мясом 2",
+                "Лазанья классическая 2",
                 R.drawable.image_recipe,
                 "Мясной фарш\n" +
                         "600 г.\n" +
@@ -46,7 +46,7 @@ class RecipeDataSource {
 
             ),
             Recipe(
-                "Лазанья классическая с мясом 3",
+                "Лазанья русская 3",
                 R.drawable.image_recipe,
                 "Мясной фарш\n" +
                         "600 г.\n" +
