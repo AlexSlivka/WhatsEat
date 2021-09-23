@@ -1,8 +1,9 @@
-package com.example.whatseat
+package com.example.whatseat.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.whatseat.ui.MainFragment
+import com.example.whatseat.R
+import com.example.whatseat.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

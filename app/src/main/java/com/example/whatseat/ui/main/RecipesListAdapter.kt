@@ -1,5 +1,6 @@
 package com.example.whatseat.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,12 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.whatseat.R
-import com.example.whatseat.Recipe
+import com.example.whatseat.data.model.Recipe
 
 class RecipesListAdapter(private val clickListener: OnRecyclerItemClicked) :
     RecyclerView.Adapter<RecipesListAdapter.RecipesListViewHolder>() {
 
-    private var recipes = listOf<Recipe>()
+    private var recipes: List<Recipe> = listOf()
+    @SuppressLint("NotifyDataSetChanged")
+    set (value) {
+        field = value
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesListViewHolder {
         return RecipesListViewHolder(

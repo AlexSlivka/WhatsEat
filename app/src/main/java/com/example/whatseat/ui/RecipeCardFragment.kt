@@ -1,6 +1,5 @@
 package com.example.whatseat.ui
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.whatseat.R
-import com.example.whatseat.Recipe
+import com.example.whatseat.data.model.Recipe
+import com.example.whatseat.RecipeDataSource
 
 class RecipeCardFragment : Fragment() {
     private lateinit var recipe: Recipe
@@ -18,11 +18,7 @@ class RecipeCardFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        recipe = arguments?.getParcelable(RECIPE_CARD_ARG) ?: Recipe(
-            "Вода со льдом",
-            R.drawable.image_recipe,
-            "Вода и лед"
-        )
+        recipe = arguments?.getInt(RECIPE_CARD_ARG)?.let { RecipeDataSource().getRecipeById(it) }!!
     }
 
     override fun onCreateView(
@@ -44,9 +40,9 @@ class RecipeCardFragment : Fragment() {
     companion object {
         private const val RECIPE_CARD_ARG = "recipeCard"
 
-        fun newInstance(recipe: Recipe) = RecipeCardFragment().apply {
+        fun newInstance(recipeId: Int) = RecipeCardFragment().apply {
             arguments = Bundle().apply {
-                putParcelable(RECIPE_CARD_ARG, recipe)
+                putInt(RECIPE_CARD_ARG, recipeId)
             }
         }
     }

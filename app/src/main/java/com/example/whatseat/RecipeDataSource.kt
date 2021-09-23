@@ -1,71 +1,26 @@
 package com.example.whatseat
 
+import com.example.whatseat.api.NetworkModule
+import com.example.whatseat.data.model.Recipe
+
 class RecipeDataSource {
-    fun getRecipes(): List<Recipe> {
-        return listOf(
-            Recipe(
-                "Лазанья классическая с мясом 1",
-                R.drawable.image_recipe,
-                "Мясной фарш\n" +
-                        "600 г.\n" +
-                        "Соус болоньезе\n" +
-                        "600 г.\n" +
-                        "Сливочное масло\n" +
-                        "60 г.\n" +
-                        "Пшеничная мука\n" +
-                        "2,5 ст.л.\n" +
-                        "Оливковое масло\n" +
-                        "2 ст.л.\n" +
-                        "Молоко\n" +
-                        "750 мл\n" +
-                        "Готовые сухие листы лазаньи\n" +
-                        "10 шт.\n" +
-                        "Твердый сыр\n" +
-                        "500 г."
+    private val theRecipeApiService = NetworkModule.theRecipeApiService
+    lateinit var recipesList: List<Recipe>
 
-            ),
-            Recipe(
-                "Лазанья классическая 2",
-                R.drawable.image_recipe,
-                "Мясной фарш\n" +
-                        "600 г.\n" +
-                        "Соус болоньезе\n" +
-                        "600 г.\n" +
-                        "Сливочное масло\n" +
-                        "60 г.\n" +
-                        "Пшеничная мука\n" +
-                        "2,5 ст.л.\n" +
-                        "Оливковое масло\n" +
-                        "2 ст.л.\n" +
-                        "Молоко\n" +
-                        "750 мл\n" +
-                        "Готовые сухие листы лазаньи\n" +
-                        "10 шт.\n" +
-                        "Твердый сыр\n" +
-                        "500 г."
-
-            ),
-            Recipe(
-                "Лазанья русская 3",
-                R.drawable.image_recipe,
-                "Мясной фарш\n" +
-                        "600 г.\n" +
-                        "Соус болоньезе\n" +
-                        "600 г.\n" +
-                        "Сливочное масло\n" +
-                        "60 г.\n" +
-                        "Пшеничная мука\n" +
-                        "2,5 ст.л.\n" +
-                        "Оливковое масло\n" +
-                        "2 ст.л.\n" +
-                        "Молоко\n" +
-                        "750 мл\n" +
-                        "Готовые сухие листы лазаньи\n" +
-                        "10 шт.\n" +
-                        "Твердый сыр\n" +
-                        "500 г."
-
-            )
-        )
+    suspend fun getRecipes(products: String): List<Recipe> {
+        recipesList = theRecipeApiService.getRecipes(products)
+        return recipesList
     }
+
+    fun getRecipeById(id: Int): Recipe {
+        for (rep in recipesList) {
+            if (rep.idRecipe == id) {
+                return rep
+            }
+        }
+
+        return Recipe(0, "Ничего", "Сщисем ничего", R.drawable.image_recipe)
+
+    }
+
 }
