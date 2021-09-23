@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.whatseat.R
 import com.example.whatseat.data.model.Recipe
 import com.example.whatseat.RecipeDataSource
+import com.example.whatseat.data.model.Repository
 
 class RecipeCardFragment : Fragment() {
     private lateinit var recipe: Recipe
@@ -18,7 +19,7 @@ class RecipeCardFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        recipe = arguments?.getInt(RECIPE_CARD_ARG)?.let { RecipeDataSource().getRecipeById(it) }!!
+        recipe = arguments?.getInt(RECIPE_CARD_ARG)?.let { Repository.getRecipeById(it) }!!
     }
 
     override fun onCreateView(
@@ -47,3 +48,23 @@ class RecipeCardFragment : Fragment() {
         }
     }
 }
+
+/*
+companion object {
+    private const val RECIPE_CARD_ARG = "recipeCard"
+
+    fun newInstance(recipe: Recipe) = RecipeCardFragment().apply {
+        arguments = Bundle().apply {
+            putParcelable(RECIPE_CARD_ARG, recipe)
+        }
+    }
+}
+}
+
+recipe = arguments?.getParcelable(RECIPE_CARD_ARG) ?: Recipe(
+"Вода со льдом",
+R.drawable.image_recipe,
+"Вода и лед"
+)
+
+*/
