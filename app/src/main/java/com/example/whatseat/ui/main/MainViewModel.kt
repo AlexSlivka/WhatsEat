@@ -5,14 +5,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.whatseat.data.model.Repository
 
-class MainViewModel : ViewModel() {
+class MainViewModel() : ViewModel() {
     private val viewStateLiveData: MutableLiveData<MainViewState> =
         MutableLiveData()
 
     init {
-        viewStateLiveData.value = MainViewState(Repository.getRecipesRepository())
+        //viewStateLiveData.value = MainViewState(Repository.getRecipesRepository())
+        Repository.getRecipesRepository().observeForever {
+            viewStateLiveData.value =  MainViewState(it)
+        }
     }
 
     fun viewState(): LiveData<MainViewState> = viewStateLiveData
 
+    fun updateByProducts (products: String ) {
+        Repository.updateRecipesByProducts(products)
+    }
+
 }
+

@@ -37,8 +37,10 @@ class RecipesListAdapter(private val clickListener: OnRecyclerItemClicked) :
         return recipes.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun bindRecipes(newRecipes: List<Recipe>) {
         recipes = newRecipes
+        notifyDataSetChanged()
     }
 
     class RecipesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
