@@ -45,33 +45,21 @@ object Repository {
     }
 
     fun updateRecipesByProducts(products: String) {
-        //uiScope.launch { NetworkModule.theRecipeApiService.getRecipes(products ) }
-       // addOrReplace(products)
         Log.d(TAG, "Запрос на сервер")
         uiScope.launch {
-            recipes = NetworkModule.theRecipeApiService.getRecipes().toMutableList()
+            recipes = NetworkModule.theRecipeApiService.getRecipes(products).toMutableList()
             Log.d(TAG, recipes.size.toString())
             Log.d(TAG, recipes.toString())
             recipesLiveData.postValue(recipes)
         }
 
-            // recipesLiveData.value = recipes
+        // recipesLiveData.value = recipes
     }
 
-    private fun addOrReplace(products: String) {
-        val recipeAdd = Recipe(
-            55,
-            products,
-            "Как приготовить$products", R.drawable.image_recipe
-        )
-
-        recipes.add(recipeAdd)
-    }
 
     fun getRecipesRepository(): LiveData<List<Recipe>> {
         return recipesLiveData
     }
-
 
     fun getRecipeById(id: Int): Recipe {
         for (rep in recipes) {
