@@ -6,9 +6,12 @@ import retrofit2.http.Query
 
 interface IRecipeApi {
 
-    @GET("products?")
-    suspend fun getRecipes(@Query("products") products: String): List<Recipe>
+    @GET("dishes?products=клубника")
+    suspend fun getRecipes(): List<Recipe>
 }
 
 
-val baseUrl: String = "185.46.8.32:8080/whatseat/api/v1/"
+/*
+@GET("products?")
+    suspend fun getRecipes(@Query("products") products: String): List<Recipe>
+ */

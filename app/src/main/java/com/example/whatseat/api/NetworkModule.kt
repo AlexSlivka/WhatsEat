@@ -9,7 +9,7 @@ import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 object NetworkModule {
-    private val baseUrl = "185.46.8.32:8080/whatseat/api/v1/"
+    private val baseUrl = "http://185.46.8.32:8080/whatseat/api/v1/"
 
     private val json = Json {
         prettyPrint = true

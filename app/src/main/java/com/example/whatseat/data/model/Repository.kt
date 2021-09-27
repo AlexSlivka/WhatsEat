@@ -1,10 +1,15 @@
 package com.example.whatseat.data.model
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.whatseat.R
+import com.example.whatseat.api.NetworkModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
+private const val TAG = "Repository"
 
 object Repository {
 
@@ -12,7 +17,7 @@ object Repository {
 
     private val recipesLiveData = MutableLiveData<List<Recipe>>()
 
-    private val recipes: MutableList<Recipe> = mutableListOf(
+    private var recipes: MutableList<Recipe> = mutableListOf(
         Recipe(
             1,
             "Первое блюдо",
@@ -41,8 +46,16 @@ object Repository {
 
     fun updateRecipesByProducts(products: String) {
         //uiScope.launch { NetworkModule.theRecipeApiService.getRecipes(products ) }
-        addOrReplace(products)
-        recipesLiveData.value = recipes
+       // addOrReplace(products)
+        Log.d(TAG, "Запрос на сервер")
+        uiScope.launch {
+            recipes = NetworkModule.theRecipeApiService.getRecipes().toMutableList()
+            Log.d(TAG, recipes.size.toString())
+            Log.d(TAG, recipes.toString())
+            recipesLiveData.postValue(recipes)
+        }
+
+            // recipesLiveData.value = recipes
     }
 
     private fun addOrReplace(products: String) {
