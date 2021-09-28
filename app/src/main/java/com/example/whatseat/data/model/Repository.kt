@@ -64,10 +64,14 @@ object Repository {
     fun getRecipeById(id: Int): Recipe {
         for (rep in recipes) {
             if (rep.idRecipe == id) {
+                rep.textRecipe = rep.textRecipe
+                    .filterNot { it == "<"[0] || it == ">"[0] || it == "l"[0] || it == "i"[0] || it == "/"[0] }
+
+
                 return rep
             }
         }
-
+// it == "</li>".get(5)
         return Recipe(0, "Ничего", "Совсем ничего", R.drawable.image_recipe)
 
     }

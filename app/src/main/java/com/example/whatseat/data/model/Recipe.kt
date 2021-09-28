@@ -9,6 +9,6 @@ import kotlinx.serialization.Transient
 data class Recipe(
     @SerialName("id") val idRecipe: Int,
     @SerialName("title") val nameRecipe: String,
-    @SerialName("description") val textRecipe: String,
+    @SerialName("description") var textRecipe: String,
     @Transient val poster: Int = R.drawable.image_recipe
 )
