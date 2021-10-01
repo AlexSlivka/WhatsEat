@@ -21,22 +21,20 @@ object Repository {
         Recipe(
             1,
             "Первое блюдо",
-            "Как приготовить первое блюдо", R.drawable.image_recipe
+            "Как приготовить первое блюдо", R.drawable.image_recipe,
+            "картинка1"
         ),
         Recipe(
             2,
             "Второе блюдо",
-            "Как приготовить второе блюдо", R.drawable.image_recipe
+            "Как приготовить второе блюдо", R.drawable.image_recipe,
+            "картинка2"
         ),
         Recipe(
             3,
             "Третье блюдо",
-            "Как приготовить третье блюдо", R.drawable.image_recipe
-        ),
-        Recipe(
-            4,
-            "Четвертое блюдо",
-            "Как приготовить 4-е блюдо", R.drawable.image_recipe
+            "Как приготовить третье блюдо", R.drawable.image_recipe,
+            "картинка3"
         )
     )
 
@@ -46,14 +44,13 @@ object Repository {
 
     fun updateRecipesByProducts(products: String) {
         Log.d(TAG, "Запрос на сервер")
+
         uiScope.launch {
             recipes = NetworkModule.theRecipeApiService.getRecipes(products).toMutableList()
             Log.d(TAG, recipes.size.toString())
             Log.d(TAG, recipes.toString())
             recipesLiveData.postValue(recipes)
         }
-
-        // recipesLiveData.value = recipes
     }
 
 
@@ -71,9 +68,8 @@ object Repository {
                 return rep
             }
         }
-// it == "</li>".get(5)
-        return Recipe(0, "Ничего", "Совсем ничего", R.drawable.image_recipe)
 
+        return Recipe(0, "Ничего", "Совсем ничего", R.drawable.image_recipe, "картинка")
     }
 
 }

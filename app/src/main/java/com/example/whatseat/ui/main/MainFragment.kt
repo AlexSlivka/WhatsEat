@@ -15,15 +15,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.whatseat.R
 import com.example.whatseat.data.model.Recipe
-import com.example.whatseat.RecipeDataSource
-import com.example.whatseat.data.model.Repository
 import com.example.whatseat.ui.OnRecyclerItemClicked
 import com.example.whatseat.ui.RecipeCardFragment
 import com.example.whatseat.ui.RecipesListAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import okhttp3.internal.notifyAll
 
 private const val TAG = "MainFragment"
 

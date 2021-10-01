@@ -16,11 +16,11 @@ class RecipesListAdapter(private val clickListener: OnRecyclerItemClicked) :
     RecyclerView.Adapter<RecipesListAdapter.RecipesListViewHolder>() {
 
     private var recipes: List<Recipe> = listOf()
-    @SuppressLint("NotifyDataSetChanged")
-    set (value) {
-        field = value
-        notifyDataSetChanged()
-    }
+        @SuppressLint("NotifyDataSetChanged")
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesListViewHolder {
         return RecipesListViewHolder(
@@ -50,7 +50,7 @@ class RecipesListAdapter(private val clickListener: OnRecyclerItemClicked) :
 
         fun onBind(recipe: Recipe) {
             Glide.with(itemView.context)
-                .load(recipe.poster)
+                .load(BASE_URL_IMG_RECIPE + recipe.imgRecipe)
                 .apply(imageOption)
                 .into(posterHolder)
 
