@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -58,8 +57,9 @@ class MainFragment : Fragment() {
 
         searchButton.setOnClickListener {
             viewModel.updateByProducts(editTextView.text.toString())
-            Toast.makeText(context, viewModel.viewState().value.toString(), Toast.LENGTH_LONG)
-                .show()
+
+            //Toast.makeText(context, viewModel.viewState().value.toString(), Toast.LENGTH_LONG)
+             //   .show()
             Log.d(TAG, viewModel.viewState().value?.recipes.toString())
         }
 
@@ -96,7 +96,7 @@ class MainFragment : Fragment() {
     private fun doOnClick(recipe: Recipe) {
         fragmentManager?.beginTransaction()
             ?.addToBackStack(null)
-            ?.replace(R.id.main_container, RecipeCardFragment.newInstance(recipe.idRecipe))
+            ?.replace(R.id.nav_host_main_fragment, RecipeCardFragment.newInstance(recipe.idRecipe))
             ?.commit()
 
     }

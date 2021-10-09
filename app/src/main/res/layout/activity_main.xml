@@ -4,14 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".ui.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/main_container"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_main_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/view_activity_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/nav_main" />
+
+    <View
+        android:id="@+id/view_activity_line"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginEnd="@dimen/start_margin"
+        android:background="@color/line"
+        app:layout_constraintBottom_toTopOf="@+id/main_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/search_panel_background"
+        app:itemIconTint="@color/search_button_background"
+        app:itemRippleColor="@color/search_button_background"
+        app:itemTextColor="@color/main_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/bottom_main_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

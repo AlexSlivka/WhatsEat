@@ -12,6 +12,6 @@
     <color name="search_panel_background">#383838</color>
     <color name="search_button_background">#e7b400</color>
     <color name="recipe_background">#383838</color>
-    <color name="line">#00ff00</color>
+    <color name="line">#e7b400</color>
     <color name="main_text">#fff</color>
 </resources>

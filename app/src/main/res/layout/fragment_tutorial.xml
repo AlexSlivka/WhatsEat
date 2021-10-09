@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <TextView
+        android:id="@+id/tv_tutorial_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="16dp"
+        android:text="@string/main_title"
+        android:textColor="@color/main_text"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_tutorial_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_margin="@dimen/start_margin"
+        android:background="@color/line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tutorial_title" />
+
+    <TextView
+        android:id="@+id/tv_tutorial_secondary_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="12dp"
+        android:text="@string/secondary_title"
+        android:textColor="@color/main_text"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tv_tutorial_title"
+        app:layout_constraintTop_toBottomOf="@id/view_tutorial_line" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_tutorial_window"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_search_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tutorial_secondary_title">
+
+        <TextView
+            android:id="@+id/tv_tutorial_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/search_margin"
+            android:layout_marginTop="@dimen/search_margin"
+            android:layout_marginBottom="@dimen/search_margin"
+            android:text="@string/search_text"
+            android:textColor="@color/main_text"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

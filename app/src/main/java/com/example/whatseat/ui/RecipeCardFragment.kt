@@ -41,8 +41,8 @@ class RecipeCardFragment : Fragment() {
             .placeholder(R.drawable.image_recipe)
             .into(posterHolderCard)
 
-        Toast.makeText(context, recipe.imgRecipe, Toast.LENGTH_LONG)
-            .show()
+            // Toast.makeText(context, recipe.imgRecipe, Toast.LENGTH_LONG)
+           // .show()
         Log.d(TAG, recipe.imgRecipe)
         return view
     }
