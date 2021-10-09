@@ -11,5 +11,5 @@ data class Recipe(
     @SerialName("title") val nameRecipe: String,
     @SerialName("description") var textRecipe: String,
     @Transient val poster: Int = R.drawable.image_recipe,
-    @SerialName("img") var imgRecipe: String
+    @SerialName("img_path") var imgRecipe: String
 )

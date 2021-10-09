@@ -61,11 +61,33 @@
             android:layout_marginStart="@dimen/search_margin"
             android:layout_marginTop="@dimen/search_margin"
             android:layout_marginBottom="@dimen/search_margin"
-            android:text="@string/search_text"
+            android:text="@string/tutorial_text"
             android:textColor="@color/main_text"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_mail_outline_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/end_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@color/search_button_background" />
+
+        <TextView
+            android:id="@+id/tv_mail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/end_margin"
+            app:layout_constraintEnd_toStartOf="@id/iv_mail"
+            app:layout_constraintBottom_toBottomOf="@id/iv_mail"
+            android:textColor="@color/main_text"
+            android:textSize="16sp"
+            android:text="@string/tutorial_mail_text" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
