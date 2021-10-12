@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <TextView
+        android:id="@+id/tv_registration_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="16dp"
+        android:text="@string/main_title"
+        android:textColor="@color/main_text"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_margin="@dimen/start_margin"
+        android:background="@color/line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_registration_title" />
+
+    <TextView
+        android:id="@+id/tv_secondary_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginTop="12dp"
+        android:text="@string/secondary_title"
+        android:textColor="@color/main_text"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tv_registration_title"
+        app:layout_constraintTop_toBottomOf="@id/view_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_block_button"
+        android:layout_width="200dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="@dimen/start_margin"
+        android:layout_marginEnd="@dimen/end_margin"
+        android:background="@drawable/shape_search_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_secondary_title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/search_margin"
+            android:layout_marginTop="@dimen/search_margin"
+            android:text="@string/username_text1"
+            android:textColor="@color/main_text"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/editText_login"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/search_margin"
+            android:background="@drawable/shape_search_edit_text_background"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/search_margin"
+            android:text="@string/password_text1"
+            android:textColor="@color/main_text"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/search_margin"
+            android:background="@drawable/shape_search_edit_text_background"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/search_margin"
+            android:text="@string/password_text2_repeat"
+            android:textColor="@color/main_text"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/editText_password_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/search_margin"
+            android:background="@drawable/shape_search_edit_text_background"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_registration"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/search_button_background"
+            android:text="@string/regist"
+            android:textColor="@color/main_background"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

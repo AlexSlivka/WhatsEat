@@ -13,10 +13,25 @@
         android:id="@+id/userFragment"
         android:name="com.example.whatseat.ui.UserFragment"
         android:label="fragment_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tutorialFragment"
         android:name="com.example.whatseat.ui.TutorialFragment"
         android:label="fragment_tutorial"
         tools:layout="@layout/fragment_tutorial" />
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.whatseat.ui.AuthorizationFragment"
+        android:label="AuthorizationFragment" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.whatseat.ui.RegistrationFragment"
+        android:label="RegistrationFragment" />
 </navigation>

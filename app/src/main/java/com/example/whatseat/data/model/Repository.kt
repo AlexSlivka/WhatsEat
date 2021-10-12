@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.whatseat.R
+import com.example.whatseat.api.IRecipeApi
 import com.example.whatseat.api.NetworkModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -11,7 +12,9 @@ import kotlinx.coroutines.launch
 
 private const val TAG = "Repository"
 
-object Repository {
+object Repository: IRepository {
+
+    private val api: IRecipeApi = NetworkModule.theRecipeApiService
 
     private val uiScope = CoroutineScope(Dispatchers.IO)
 
@@ -42,11 +45,11 @@ object Repository {
         recipesLiveData.value = recipes
     }
 
-    fun updateRecipesByProducts(products: String) {
+    override fun updateRecipesByProducts(products: String) {
         Log.d(TAG, "Запрос на сервер")
 
         uiScope.launch {
-            recipes = NetworkModule.theRecipeApiService.getRecipes(products).toMutableList()
+            recipes = api.getRecipes(products).toMutableList()
             Log.d(TAG, recipes.size.toString())
             Log.d(TAG, recipes.toString())
             recipesLiveData.postValue(recipes)
@@ -54,11 +57,11 @@ object Repository {
     }
 
 
-    fun getRecipesRepository(): LiveData<List<Recipe>> {
+    override fun getRecipesRepository(): LiveData<List<Recipe>> {
         return recipesLiveData
     }
 
-    fun getRecipeById(id: Int): Recipe {
+    override fun getRecipeById(id: Int): Recipe {
         for (rep in recipes) {
             if (rep.idRecipe == id) {
                 rep.textRecipe = rep.textRecipe
