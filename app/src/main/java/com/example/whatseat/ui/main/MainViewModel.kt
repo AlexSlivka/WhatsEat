@@ -10,15 +10,14 @@ class MainViewModel() : ViewModel() {
         MutableLiveData()
 
     init {
-        //viewStateLiveData.value = MainViewState(Repository.getRecipesRepository())
         Repository.getRecipesRepository().observeForever {
-            viewStateLiveData.value =  MainViewState(it)
+            viewStateLiveData.value = MainViewState(it)
         }
     }
 
     fun viewState(): LiveData<MainViewState> = viewStateLiveData
 
-    fun updateByProducts (products: String ) {
+    fun updateByProducts(products: String) {
         Repository.updateRecipesByProducts(products)
     }
 

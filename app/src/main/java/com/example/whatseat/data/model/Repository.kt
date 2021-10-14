@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 private const val TAG = "Repository"
 
-object Repository: IRepository {
+object Repository : IRepository {
 
     private val api: IRecipeApi = NetworkModule.theRecipeApiService
 
@@ -55,7 +55,6 @@ object Repository: IRepository {
             recipesLiveData.postValue(recipes)
         }
     }
-
 
     override fun getRecipesRepository(): LiveData<List<Recipe>> {
         return recipesLiveData

@@ -8,5 +8,5 @@ interface IRepository {
 
     fun getRecipesRepository(): LiveData<List<Recipe>>
 
-    fun getRecipeById(id: Int) : Recipe
+    fun getRecipeById(id: Int): Recipe
 }

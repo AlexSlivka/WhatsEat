@@ -10,11 +10,3 @@ interface IRecipeApi {
     suspend fun getRecipes(@Query("products") products: String): List<Recipe>
 }
 
-
-/*
-@GET("dishes?")
-    suspend fun getRecipes(@Query("products") products: String): List<Recipe>
-
-     @GET("dishes?products=клубника")
-    suspend fun getRecipes(): List<Recipe>
- */

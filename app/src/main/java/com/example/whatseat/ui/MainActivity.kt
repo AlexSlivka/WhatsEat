@@ -27,10 +27,5 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.main_bottom)
         bottomNavigationView.setupWithNavController(navController)
 
-        /* if (savedInstanceState == null) {
-             supportFragmentManager.beginTransaction()
-                 .add(R.id.main_container, MainFragment())
-                 .commit()
-         }*/
     }
 }

@@ -58,8 +58,6 @@ class MainFragment : Fragment() {
         searchButton.setOnClickListener {
             viewModel.updateByProducts(editTextView.text.toString())
 
-            //Toast.makeText(context, viewModel.viewState().value.toString(), Toast.LENGTH_LONG)
-             //   .show()
             Log.d(TAG, viewModel.viewState().value?.recipes.toString())
         }
 
@@ -71,27 +69,12 @@ class MainFragment : Fragment() {
 
         recyclerRecipesList?.layoutManager = GridLayoutManager(context, noOfColumns)
 
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        /*   uiScope.launch {
-               updateData()
-           }*/
-
     }
 
     override fun onDetach() {
         recyclerRecipesList = null
         super.onDetach()
     }
-
-    /*  private suspend fun updateData() {
-          adapterRecipesList?.bindRecipes(RecipeDataSource().getRecipes("яйцо"))
-      }
-  */
 
     private fun doOnClick(recipe: Recipe) {
         fragmentManager?.beginTransaction()
